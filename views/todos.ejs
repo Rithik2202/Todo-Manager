@@ -1,6 +1,17 @@
+<html>
+<body>
 <table>
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>dueDate</td>
+        <td>Completed</td>
+    </tr>
     <% for(var i=0; i< allTodos.length; i++){%>
     <tr>
+        <td>
+            <%=allTodos[i].id %>
+        </td>
         <td>
             <%=allTodos[i].title %>
         </td>
@@ -10,12 +21,8 @@
         <td>
             <%=allTodos[i].completed %>
         </td>
-        <td>
-            <%=allTodos[i].createdAt %>
-        </td>
-        <td>
-            <%=allTodos[i].updatedAt %>
-        </td>
     </tr>
 <% } %>
 </table>
+</body>
+</html>
