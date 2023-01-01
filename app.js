@@ -56,7 +56,7 @@ app.post("/todos", async function (request, response) {
   try {
     const todo = await Todo.addTodo({
       title: request.body.title,
-      dueDate:request.body.date});
+      dueDate:request.body.dueDate});
     return response.json(todo);
   } catch (error) {
     console.log(error);
