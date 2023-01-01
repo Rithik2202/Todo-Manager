@@ -25,7 +25,7 @@ app.get("/todos",async function (request, response) {
 });
 
 // eslint-disable-next-line no-unused-vars
-app.get("/todos", async function (_request, response) {
+app.get("/todos", async function (request, response) {
   console.log("Processing list of all Todos ...");
   // FILL IN YOUR CODE HERE
 
@@ -78,7 +78,7 @@ app.put("/todos/:id/markAsCompleted", async function (request, response) {
 app.delete("/todos/:id", async function (request, response) {
   console.log("We have to delete a Todo with ID: ", request.params.id);
   try {
-    const Row = await Todo.remove({ where: { id: request.params.id } });
+    const Row = await Todo.remove(request.params.id );
     return response.json({success: Row==1});
   } catch (error) {
     return response.status(422).json(error);
