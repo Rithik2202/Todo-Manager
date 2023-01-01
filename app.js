@@ -54,7 +54,9 @@ app.get("/todos/:id", async function (request, response) {
 
 app.post("/todos", async function (request, response) {
   try {
-    const todo = await Todo.addTodo(request.body);
+    const todo = await Todo.addTodo({
+      title: request.body.title,
+    date:request.body.date});
     return response.json(todo);
   } catch (error) {
     console.log(error);
