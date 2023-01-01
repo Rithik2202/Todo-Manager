@@ -79,7 +79,7 @@ app.delete("/todos/:id", async function (request, response) {
   console.log("We have to delete a Todo with ID: ", request.params.id);
   try {
     const Row = await Todo.remove(request.params.id );
-    return response.json({success: Row==1});
+    return response.json({success: Row===1});
   } catch (error) {
     return response.status(422).json(error);
   }
