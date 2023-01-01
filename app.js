@@ -81,6 +81,7 @@ app.delete("/todos/:id", async function (request, response) {
     const Row = await Todo.remove(request.params.id );
     return response.json({success: Row===1});
   } catch (error) {
+    console.log(error);
     return response.status(422).json(error);
   }
 });
