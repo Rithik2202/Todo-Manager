@@ -132,6 +132,9 @@ app.post("/users", async (request, response) => {
 app.get("/login", (request, response) => {
   response.render("login", { title: "Login", csrfToken: request.csrfToken() });
 });
+app.get("/index", (request, response) => {
+  response.render("index", {csrfToken: request.csrfToken() });
+});
 
 app.get("/signout", (request, response, next) => {
   //Signout
